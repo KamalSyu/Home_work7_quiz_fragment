@@ -1,5 +1,6 @@
 package com.example.quizapp.ui.result
 
+import android.animation.ObjectAnimator
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -31,6 +32,9 @@ class ResultFragment : Fragment() {
         // Установка текста результата
         binding.resultText.text = "Ваш результат: $result"
 
+        // Запуск анимации
+        animateResults()
+
         // Обработчик нажатия на кнопку "Начать заново"
         binding.restartButton.setOnClickListener {
             findNavController().navigate(R.id.action_resultFragment_to_welcomeFragment)
@@ -40,7 +44,23 @@ class ResultFragment : Fragment() {
             findNavController().navigate(R.id.action_resultFragment_to_quizFragment)
         }
     }
+    private fun animateResults() {
+        // Анимация появления изображения
+        binding.icResult48.alpha = 0f // Скрываем изображение
+        binding.icResult48.visibility = View.VISIBLE // Делаем изображение видимым
+        ObjectAnimator.ofFloat(binding.icResult48, "alpha", 0f, 1f).apply {
+            duration = 1000 // Длительность анимации в миллисекундах
+            start() // Запускаем анимацию
+        }
 
+        // Анимация появления текста
+        binding.resultText.alpha = 0f // Скрываем текст
+        binding.resultText.visibility = View.VISIBLE // Делаем текст видимым
+        ObjectAnimator.ofFloat(binding.resultText, "alpha", 0f, 1f).apply {
+            duration = 1000 // Длительность анимации в миллисекундах
+            start() // Запускаем анимацию
+        }
+    }
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null // Освобождаем привязку, чтобы избежать утечек памяти

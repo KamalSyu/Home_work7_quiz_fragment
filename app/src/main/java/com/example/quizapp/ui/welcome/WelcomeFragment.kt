@@ -18,15 +18,13 @@ class WelcomeFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentWelcomeBinding.inflate(inflater, container, false) // Создаем экземпляр привязки
+        _binding =
+            FragmentWelcomeBinding.inflate(inflater, container, false) // Создаем экземпляр привязки
         return binding.root // Возвращаем корневое представление
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState) // Вызываем родительский метод
-
-        // Установка приветственного текста
-        binding.welcomeText.text = binding.welcomeText.text.toString()
 
         // Получение ссылки на кнопку и установка слушателя
         binding.startButton.setOnClickListener {

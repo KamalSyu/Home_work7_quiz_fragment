@@ -5,6 +5,8 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.Animation
+import android.view.animation.AnimationUtils
 import android.widget.RadioButton
 import android.widget.Toast
 import androidx.fragment.app.Fragment
@@ -25,6 +27,7 @@ class QuizFragment : Fragment() {
 
     private var currentQuestionIndex = 0
     private var correctAnswersCount = 0
+    private lateinit var fadeInAnimation: Animation // Объявляем переменную для анимации
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -33,6 +36,9 @@ class QuizFragment : Fragment() {
         _binding =
             FragmentQuizBinding.inflate(inflater, container, false) // Создаем экземпляр привязки
         val view = binding.root // Получаем корневое представление
+
+        // Инициализация анимации
+        fadeInAnimation = AnimationUtils.loadAnimation(requireContext(), R.anim.fade_in)
 
         // Скрываем кнопку перехода к результатам в начале
         binding.toResultButton.visibility = View.GONE
@@ -67,6 +73,8 @@ class QuizFragment : Fragment() {
                 radioButton.text = answer
                 binding.answersRadioGroup.addView(radioButton)
             }
+            // Применяем анимацию к кнопке «Ответить»
+            binding.submitButton.startAnimation(fadeInAnimation) // Запускаем анимацию
         } else {
             notifyQuizFinished()
         }

@@ -9,7 +9,11 @@
         tools:layout="@layout/fragment_welcome">
         <action
             android:id="@+id/action_welcomeFragment_to_quizFragment"
-            app:destination="@id/navigation_quiz" />
+            app:destination="@id/navigation_quiz"
+            app:enterAnim="@anim/fragment_enter"
+            app:exitAnim="@anim/fragment_exit"
+            app:popEnterAnim="@anim/fragment_pop_enter"
+            app:popExitAnim="@anim/fragment_pop_exit"/>
     </fragment>
 
     <fragment
@@ -18,10 +22,18 @@
         tools:layout="@layout/fragment_quiz">
         <action
             android:id="@+id/action_quizFragment_to_welcomeFragment"
-            app:destination="@id/navigation_welcome" />
+            app:destination="@id/navigation_welcome"
+            app:enterAnim="@anim/fragment_enter"
+            app:exitAnim="@anim/fragment_exit"
+            app:popEnterAnim="@anim/fragment_pop_enter"
+            app:popExitAnim="@anim/fragment_pop_exit"/>
         <action
             android:id="@+id/action_quizFragment_to_resultFragment"
-            app:destination="@id/navigation_result"/>
+            app:destination="@id/navigation_result"
+            app:enterAnim="@anim/fragment_enter"
+            app:exitAnim="@anim/fragment_exit"
+            app:popEnterAnim="@anim/fragment_pop_enter"
+            app:popExitAnim="@anim/fragment_pop_exit"/>
     </fragment>
 
     <fragment
@@ -30,10 +42,18 @@
         tools:layout="@layout/fragment_result">
         <action
             android:id="@+id/action_resultFragment_to_quizFragment"
-            app:destination="@id/navigation_quiz" />
+            app:destination="@id/navigation_quiz"
+            app:enterAnim="@anim/fragment_enter"
+            app:exitAnim="@anim/fragment_exit"
+            app:popEnterAnim="@anim/fragment_pop_enter"
+            app:popExitAnim="@anim/fragment_pop_exit"/>
         <action
             android:id="@+id/action_resultFragment_to_welcomeFragment"
-            app:destination="@id/navigation_welcome" />
+            app:destination="@id/navigation_welcome"
+            app:enterAnim="@anim/fragment_enter"
+            app:exitAnim="@anim/fragment_exit"
+            app:popEnterAnim="@anim/fragment_pop_enter"
+            app:popExitAnim="@anim/fragment_pop_exit"/>
         <argument
             android:name="correctAnswersCount"
             app:argType="integer"/>
