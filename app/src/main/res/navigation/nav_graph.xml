@@ -1,0 +1,41 @@
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/navigation_welcome">
+
+    <fragment
+        android:id="@+id/navigation_welcome"
+        android:name="com.example.quizapp.ui.welcome.WelcomeFragment"
+        tools:layout="@layout/fragment_welcome">
+        <action
+            android:id="@+id/action_welcomeFragment_to_quizFragment"
+            app:destination="@id/navigation_quiz" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_quiz"
+        android:name="com.example.quizapp.ui.quiz.QuizFragment"
+        tools:layout="@layout/fragment_quiz">
+        <action
+            android:id="@+id/action_quizFragment_to_welcomeFragment"
+            app:destination="@id/navigation_welcome" />
+        <action
+            android:id="@+id/action_quizFragment_to_resultFragment"
+            app:destination="@id/navigation_result"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_result"
+        android:name="com.example.quizapp.ui.result.ResultFragment"
+        tools:layout="@layout/fragment_result">
+        <action
+            android:id="@+id/action_resultFragment_to_quizFragment"
+            app:destination="@id/navigation_quiz" />
+        <action
+            android:id="@+id/action_resultFragment_to_welcomeFragment"
+            app:destination="@id/navigation_welcome" />
+        <argument
+            android:name="correctAnswersCount"
+            app:argType="integer"/>
+    </fragment>
+</navigation>

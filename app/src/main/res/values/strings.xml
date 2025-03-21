@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">QuizApp</string>
+    <string name="title_welcome">Welcome</string>
+    <string name="title_quiz">Quiz</string>
+    <string name="title_result">Result</string>
+    <string name="ic_result_48.description">ResultIcon</string>
+    <string name="ic_quiz2_48.description">QuizIcon</string>
+    <string name="welcome">Welcome</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

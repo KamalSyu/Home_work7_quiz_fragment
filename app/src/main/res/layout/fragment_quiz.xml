@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/ic_quiz2_48">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/questionTextView"
+                style="@style/CardView.Dark"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Вопрос будет здесь"
+                android:fontFamily="@font/open_sans_condensed_italic"
+                android:textSize="18sp" />
+
+            <RadioGroup
+                android:id="@+id/answersRadioGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:id="@+id/submitButton"
+                style="@style/CardView.Dark"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/open_sans_semi_condensed_bold"
+                android:text="Ответить" />
+
+            <TextView
+                android:id="@+id/resultTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18sp" />
+
+            <Button
+                android:id="@+id/resetQuizButton"
+                style="@style/CardView.Dark"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/open_sans_semi_condensed_bold"
+                android:text="Начать новый квиз"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/back_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/open_sans_semi_condensed_bold"
+                android:text="Назад" />
+
+            <Button
+                android:id="@+id/to_result_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/open_sans_semi_condensed_bold"
+                android:text="Посмотреть результаты" />
+
+        </LinearLayout>
+    </ScrollView>
+    <ImageView
+        android:id="@+id/ic_quiz2_48"
+        android:layout_width="150dp"
+        android:layout_height="130dp"
+        android:contentDescription="@string/ic_quiz2_48.description"
+        android:src="@drawable/ic_quiz2_48px"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="32dp" />
+</RelativeLayout>
